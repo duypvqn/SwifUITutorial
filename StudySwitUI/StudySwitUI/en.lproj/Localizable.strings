@@ -1,0 +1,11 @@
+/* 
+  MyLocalizable.strings
+  StudySwitUI
+
+  Created by DuyPhamViet on 2021/09/29.
+  
+*/
+
+"name" = "名";
+"address" = "住所";
+"phone" = "携帯電話";
