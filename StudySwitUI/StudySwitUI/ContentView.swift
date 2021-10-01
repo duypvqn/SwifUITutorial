@@ -95,6 +95,81 @@ struct SwiftUIType: Hashable {
     }
 }
 
+struct RowView: View {
+    var viewInfo: SwiftUIType
+    var body: some View {
+        switch viewInfo.type {
+        case .Form:
+            NavigationLink(
+                destination: FormView()){
+                Text(viewInfo.name)
+            }
+        case .Group:
+            NavigationLink(
+                destination: GroupView()){
+                Text(viewInfo.name)
+            }
+        case .GroupBox:
+            NavigationLink(
+                destination: GroupBoxView()){
+                Text(viewInfo.name)
+            }
+        case .ScrollView:
+            NavigationLink(
+                destination: Scroll()){
+                Text(viewInfo.name)
+            }
+        case .ScrollViewReader:
+            NavigationLink(
+                destination: ScrollViewReaderView()){
+                Text(viewInfo.name)
+            }
+        case .ScrollViewProxy:
+            NavigationLink(
+                destination: ScrollViewProxyView()){
+                Text(viewInfo.name)
+            }
+        case .List:
+            NavigationLink(
+                destination: ListView()){
+                Text(viewInfo.name)
+            }
+        case .Section:
+            NavigationLink(
+                destination: SectionView()){
+                Text(viewInfo.name)
+            }
+        case .Foreach:
+            NavigationLink(
+                destination: ForeachView()){
+                Text(viewInfo.name)
+            }
+        case .Table:
+            NavigationLink(
+                destination: TableView()){
+                Text(viewInfo.name)
+            }
+        case .OutlineGroup:
+            NavigationLink(
+                destination: OutlineGroupView()){
+                Text(viewInfo.name)
+            }
+        case .DisclosureGroup:
+            NavigationLink(
+                destination: DisclosureGroupView()){
+                Text(viewInfo.name)
+            }
+        case .TabView:
+            NavigationLink(
+                destination: TabViewDetail()){
+                Text(viewInfo.name)
+            }
+        default:
+            Text(viewInfo.name)
+        }
+    }
+}
+
 struct ContentView: View {
     enum SwiftUI: String, CaseIterable {
         case Container
@@ -112,75 +187,7 @@ struct ContentView: View {
             List {
                 if #available(iOS 14.0, *) {
                     OutlineGroup(data, id: \.self, children: \.childs) { (uiType) in
-                        switch uiType.type {
-                        case .Form:
-                            NavigationLink(
-                                destination: FormView()){
-                                Text(uiType.name)
-                            }
-                        case .Group:
-                            NavigationLink(
-                                destination: GroupView()){
-                                Text(uiType.name)
-                            }
-                        case .GroupBox:
-                            NavigationLink(
-                                destination: GroupBoxView()){
-                                Text(uiType.name)
-                            }
-                        case .ScrollView:
-                            NavigationLink(
-                                destination: Scroll()){
-                                Text(uiType.name)
-                            }
-                        case .ScrollViewReader:
-                            NavigationLink(
-                                destination: ScrollViewReaderView()){
-                                Text(uiType.name)
-                            }
-                        case .ScrollViewProxy:
-                            NavigationLink(
-                                destination: ScrollViewProxyView()){
-                                Text(uiType.name)
-                            }
-                        case .List:
-                            NavigationLink(
-                                destination: ListView()){
-                                Text(uiType.name)
-                            }
-                        case .Section:
-                            NavigationLink(
-                                destination: SectionView()){
-                                Text(uiType.name)
-                            }
-                        case .Foreach:
-                            NavigationLink(
-                                destination: ForeachView()){
-                                Text(uiType.name)
-                            }
-//                        case .Table:
-//                            NavigationLink(
-//                                destination: TableView()){
-//                                Text(uiType.name)
-//                            }
-//                        case .OutlineGroup:
-//                            NavigationLink(
-//                                destination: OutlineGroupView()){
-//                                Text(uiType.name)
-//                            }
-//                        case .DisclosureGroup:
-//                            NavigationLink(
-//                                destination: DisclosureGroupView()){
-//                                Text(uiType.name)
-//                            }
-//                        case .TabView:
-//                            NavigationLink(
-//                                destination: TabViewDetail()){
-//                                Text(uiType.name)
-//                            }
-                        default:
-                            Text(uiType.name)
-                        }
+                        RowView(viewInfo: uiType)
                     }
                 } else {
                     // Fallback on earlier versions

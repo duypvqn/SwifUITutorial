@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		08CF93B234004AAB07915829 /* Pods_StudySwitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24297C005ED6193D5FF5656 /* Pods_StudySwitUI.framework */; };
+		379970792706B884008BEF27 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970782706B884008BEF27 /* LoadingView.swift */; };
+		379970812706BF87008BEF27 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970802706BF87008BEF27 /* PageViewController.swift */; };
+		379970872706E15B008BEF27 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970862706E15B008BEF27 /* PageView.swift */; };
 		6273436B612278C83F53876B /* Pods_StudySwitUI_StudySwitUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3CAB4599D04EE4C553D3D8 /* Pods_StudySwitUI_StudySwitUIUITests.framework */; };
 		791ECA752704038A0055E36E /* HierarchicalViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791ECA742704038A0055E36E /* HierarchicalViewDetail.swift */; };
 		791ECA7E27040A710055E36E /* OutlineGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791ECA7D27040A710055E36E /* OutlineGroupView.swift */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		017C404A3E6408109B4C13B8 /* Pods_StudySwitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudySwitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		157BDD2ED9EE8F299288B484 /* Pods-StudySwitUI-StudySwitUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySwitUI-StudySwitUIUITests.release.xcconfig"; path = "Target Support Files/Pods-StudySwitUI-StudySwitUIUITests/Pods-StudySwitUI-StudySwitUIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		379970782706B884008BEF27 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		379970802706BF87008BEF27 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		379970862706E15B008BEF27 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		4BA119631D2F47484653D478 /* Pods-StudySwitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySwitUITests.release.xcconfig"; path = "Target Support Files/Pods-StudySwitUITests/Pods-StudySwitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		791ECA742704038A0055E36E /* HierarchicalViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalViewDetail.swift; sourceTree = "<group>"; };
 		791ECA7D27040A710055E36E /* OutlineGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineGroupView.swift; sourceTree = "<group>"; };
@@ -141,6 +147,16 @@
 				017C404A3E6408109B4C13B8 /* Pods_StudySwitUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		379970772706B858008BEF27 /* UIViewToSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				379970782706B884008BEF27 /* LoadingView.swift */,
+				379970802706BF87008BEF27 /* PageViewController.swift */,
+				379970862706E15B008BEF27 /* PageView.swift */,
+			);
+			path = UIViewToSwiftUI;
 			sourceTree = "<group>";
 		};
 		71345F2D9C62CB9F62019CAA /* Pods */ = {
@@ -276,6 +292,7 @@
 		79AB3D582705AC5600C223B5 /* View Layout and Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				379970772706B858008BEF27 /* UIViewToSwiftUI */,
 				791ECAE027046ADA0055E36E /* Table */,
 				791ECAD027046AA80055E36E /* Lists */,
 				791ECAC027046A6C0055E36E /* ScrollView */,
@@ -503,16 +520,19 @@
 				791ECAD227046AB00055E36E /* ListView.swift in Sources */,
 				791ECA752704038A0055E36E /* HierarchicalViewDetail.swift in Sources */,
 				791ECAC227046A7A0055E36E /* Scroll.swift in Sources */,
+				379970792706B884008BEF27 /* LoadingView.swift in Sources */,
 				791ECAB2270465600055E36E /* GroupView.swift in Sources */,
 				791ECAC727046A8B0055E36E /* ScrollViewReaderView.swift in Sources */,
 				791ECAA5270446400055E36E /* FormView.swift in Sources */,
 				792D2DFF26FD9931003EC4D8 /* AppDelegate.swift in Sources */,
 				792D2E0126FD9931003EC4D8 /* SceneDelegate.swift in Sources */,
+				379970812706BF87008BEF27 /* PageViewController.swift in Sources */,
 				791ECABC27046A5B0055E36E /* ControlGroupView.swift in Sources */,
 				79AB3D5B2705ACCF00C223B5 /* StateAndDataFlow.swift in Sources */,
 				791ECADC27046AC20055E36E /* SectionView.swift in Sources */,
 				792D2E0326FD9931003EC4D8 /* ContentView.swift in Sources */,
 				791ECAE227046AE40055E36E /* TableView.swift in Sources */,
+				379970872706E15B008BEF27 /* PageView.swift in Sources */,
 				791ECAE727046B0E0055E36E /* TabViewDetail.swift in Sources */,
 				79AB3D602705AD0000C223B5 /* Result.swift in Sources */,
 				791ECAEC27046B1C0055E36E /* HSplitViewDetail.swift in Sources */,

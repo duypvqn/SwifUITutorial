@@ -9,21 +9,29 @@ import SwiftUI
 
 struct StateAndDataFlow: View {
     @State private var songList = [Result]()
-    
+    @State private var isLoading = true
     var body: some View {
-        List(songList, id: \.trackId) { (item) in
-            VStack(alignment: .leading) {
-                Text(item.trackName)
-                    .font(.headline)
-                Text(item.collectionName)
+        ZStack {
+            LoadingView(content: {
+                List(songList, id: \.trackId) { (item) in
+                    VStack(alignment: .leading) {
+                        Text(item.trackName)
+                            .font(.headline)
+                        Text(item.collectionName)
+                    }
+                }
+            }, isAnimating: $isLoading)
+        }
+        .onAppear(perform: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                getSongList()
             }
-        }.onAppear(perform: {
-            getSongList()
         })
     }
-    
+
     func getSongList(){
         SearchService.getSongs {(songs: [Result]) in
+            isLoading = false
             self.songList = songs
         }
     }
@@ -35,3 +43,4 @@ struct StateAndDataFlow_Previews: PreviewProvider {
             .previewDevice("iPhone 12 Pro Max")
     }
 }
+

@@ -20,22 +20,26 @@ struct DisclosureGroupView: View {
     
     var body: some View {
         if #available(iOS 14.0, *){
-            DisclosureGroup("Person's info") {
-                VStack {
-                    HStack {
-                        Text("name"+":")
-                        TextField("name", text: $perInfo.name)
-                    }
-                    HStack {
-                        Text("address"+":")
-                        TextField("address", text: $perInfo.name)
-                    }
-                    HStack {
-                        Text("phone"+":")
-                        TextField("phone", text: $perInfo.name)
+            List {
+                Text("A view that shows or hides another content view, based on the state of a disclosure control.")
+                DisclosureGroup("Person's info") {
+                    VStack {
+                        HStack {
+                            Text("name"+":")
+                            TextField("name", text: $perInfo.name)
+                        }
+                        HStack {
+                            Text("address"+":")
+                            TextField("address", text: $perInfo.name)
+                        }
+                        HStack {
+                            Text("phone"+":")
+                            TextField("phone", text: $perInfo.name)
+                        }
                     }
                 }
             }
+            .navigationBarTitle("\(String(describing: DisclosureGroupView.self))")
             
         } else {
             Text("Only exist from iOs14")
